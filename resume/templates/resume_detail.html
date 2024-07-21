@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .resume {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .resume h2 {
+            border-bottom: 2px solid #77aaff;
+            padding-bottom: 10px;
+            color: #333;
+        }
+        .resume ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume li {
+            margin-bottom: 10px;
+        }
+        .resume p {
+            margin-bottom: 20px;
+        }
+        .resume button {
+            display: block;
+            background: #77aaff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .resume button:hover {
+            background: #5a98e8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ personal_info.name }}'s Resume</h1>
+    </header>
+    <div class="container">
+        <div class="resume">
+            <h2>Career objective</h2>
+            <ul>
+                {% for co in career_objective %}
+                <li>{{co.career_objective }}</li>
+                {% endfor %}
+            </ul>
+            <h2>Academic Details</h2>
+                <ul>
+                    {% for ad in academic_details %}
+                    <li>{{ ad.academic_details }}</li>
+                    {% endfor %}
+                </ul>
+                <h2>Current Status</h2>
+                    <ul>
+                        {%for cs in current_status%}
+                        <li>{{cs.current_status}}</li>
+                        {% endfor %}
+                    </ul>
+             <h2>Areas of Interest</h2>
+             <ul>
+                {% for ai in area_of_interest%}
+                <li>{{ ai.area_of_interest }}</li>
+                {% endfor %} 
+            </ul>
+             <h2>Professional Skills</h2>
+             <ul>
+                {%for pf in professional_skills%}
+                <li>{{ pf.professional_skills}}</li>
+                {% endfor %} 
+            </ul>
+             <h2>Personal Skills</h2>
+             <ul>
+                {%for ps in personal_skills %}
+                <li>{{ ps.personal_skills}}</li>
+                {% endfor %} 
+            </ul>
+            <h2>Work Experience</h2>
+             <ul>
+                {% for ws in work_experience%}
+                <li>{{ws.work_experience}}</li>
+                {% endfor %} 
+            </ul>  
+             <h2>Academic Activities and Achievements</h2> 
+             <ul>
+                {% for aa in academic_activites_and_achievements %}
+                <li>{{aa.academic_activites}}</li>
+                {% endfor %}
+             </ul>
+            <h2>Extracurricular Activities and Achievements</h2> 
+            <ul>
+                {% for ea in extracurricular_activities_and_achievements %}
+                <li>{{ea.extracurricular_activities}} </li>
+                {% endfor %}
+             </ul>
+            <h2>Personal Profile</h2>
+              <ul>
+                {% for pp in personal_profile%}
+                <li>{{pp.personal_profile}}</li>
+                {% endfor %}
+              </ul>
+            <h2>Declaration</h2>
+              <ul>
+                {% for de in declaration %}
+                <li>{{de.declaration}}</li>
+                {% endfor %}
+              </ul>
+            <h2>Date</h2>
+              <ul>
+                {% for dt in date %}
+                <li>{{dt.date}}</li>
+                {% endfor %}
+              </ul>
+            <h2>Place</h2>
+              <ul>
+                {% for pl in place %}
+                <li>{{pl.place}}</li>
+                {% endfor %}
+              </ul>  
+              <button onclick="window.location.href='{% url 'download_resume' personal_info.id %}'">Download Resume</button>
+        </div>
+    </div>
+</body>
+</html>

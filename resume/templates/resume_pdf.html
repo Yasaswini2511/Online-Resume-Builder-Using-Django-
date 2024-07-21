@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ personal_info.name }}'s Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .resume {
+            padding: 20px;
+        }
+        .resume h2 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            color: #000;
+        }
+        .resume ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume li {
+            margin-bottom: 10px;
+        }
+        .resume p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume">
+            <h2>Career objective</h2>
+            <ul>
+                {% for co in career_objective %}
+                <li>{{co.career_objective }}</li>
+            </ul>
+            <h2>Academic Details</h2>
+                <ul>
+                    {% for ad in academic_details %}
+                    <li>{{ ad.academic_details }}</li>
+                </ul>
+                <h2>Current Status</h2>
+                    <ul>
+                        {%for cs in current_status%}
+                        <li>{{cs.current_status}}</li>
+                    </ul>
+             <h2>Areas of Interest</h2>
+             <ul>
+                {% for ai in area_of_interest%}
+                <li>{{ ai.area_of_interest }}</li>
+             </ul>
+             <h2>Professional Skills</h2>
+             <ul>
+                {%for pf in professional_skills%}
+                <li>{{ pf.professional_skills}}</li>
+             </ul>
+             <h2>Personal Skills</h2>
+             <ul>
+                {%for ps in personal_skills %}
+                <li>{{ ps.personal_skills}}</li>
+             </ul>
+            <h2>Work Experience</h2>
+             <ul>
+                {% for ws in work_experience%}
+                <li>{{ws.work_experience}}</li>
+             </ul>  
+             <h2>Academic Activities and Achievements</h2> 
+             <ul>
+                {% for aa in academic_activites_and_achievements %}
+                <li>{{aa.academic_activites_and_achievements}}</li>
+             </ul>
+            <h2>Extracurricular Activities and Achievements</h2>
+             <ul>
+                {% for ea in extracurricular_activities_and_achievements %}
+                <li>{{ea.extracurricular_activities_and_achievements}} </li>
+             </ul>
+            <h2>Personal Profile</h2>
+              <ul>
+                {% for pp in personal_profile%}
+                <li>{{pp.personal_profile}}</li>
+              </ul>
+            <h2>Declaration</h2>
+              <ul>
+                {% for de in declaration %}
+                <li>{{de.declaration}}</li>
+              </ul>
+            <h2>Date</h2>
+              <ul>
+                {% for dt in date %}
+                <li>{{dt.date}}</li>
+              </ul>
+            <h2>Place</h2>
+              <ul>
+                {% for pl in place %}
+                <li>{{pl.place}}</li>
+              </ul>  
+        </div>
+    </div>
+</body>
+</html>

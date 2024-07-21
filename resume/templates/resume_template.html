@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <style>
+        /* Add styles for better appearance */
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2 { color: #333; }
+        p { margin: 5px 0; }
+    </style>
+    <script>
+        function printResume() {
+            window.print();
+        }
+    </script>
+</head>
+<body onload="printResume()">
+    <h1>Resume</h1>
+    <h2>Career Objective</h2>
+    <p>{{ form_data.career_objective }}</p>
+
+    <h2>Academic Details</h2>
+    <p>{{ form_data.academic_details }}</p>
+
+    <h2>Current Status</h2>
+    <p>{{ form_data.current_status }}</p>
+
+    <h2>Areas of Interest</h2>
+    <p>{{ form_data.areas_of_interest }}</p>
+
+    <h2>Professional Skills</h2>
+    <p>{{ form_data.professional_skills }}</p>
+
+    <h2>Personal Skills</h2>
+    <p>{{ form_data.personal_skills }}</p>
+
+    <h2>Work Experience</h2>
+    <p>{{ form_data.work_experience }}</p>
+
+    <h2>Academic Activities and Achievements</h2>
+    <p>{{ form_data.academic_activities }}</p>
+
+    <h2>Extracurricular Activities and Achievements</h2>
+    <p>{{ form_data.extracurricular_activities }}</p>
+
+    <h2>Personal Profile</h2>
+    <p>{{ form_data.personal_profile }}</p>
+
+    <h2>Declaration</h2>
+    <p>{{ form_data.declaration }}</p>
+
+    <h2>Date</h2>
+    <p>{{ form_data.date }}</p>
+
+    <h2>Place</h2>
+    <p>{{ form_data.place }}</p>
+</body>
+</html>
